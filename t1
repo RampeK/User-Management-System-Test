@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Management System</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1>AJAX assignment</h1>
+    <h2>User Management System</h2>
+
+    <!-- Message Alert -->
+    <div id="message" class="alert alert-info" style="display: none;"></div>
+
+    <!-- Registration and Login -->
+    <div class="mb-3">
+        <button id="signup-btn" class="btn btn-primary">SignUp</button>
+        <button id="login-btn" class="btn btn-secondary">Login</button>
+    </div>
+
+    <!-- User Operations -->
+    <div class="mb-3">
+        <button id="load-users" class="btn btn-info">Load Users</button>
+        <button id="create-user" class="btn btn-success">Create User</button>
+    </div>
+
+    <!-- Pagination Controls -->
+    <nav aria-label="Page navigation">
+        <ul id="pagination" class="pagination">
+            <!-- Pagination buttons will be added dynamically here -->
+        </ul>
+    </nav>
+
+    <!-- User List -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Avatar</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="user-list">
+            <!-- User rows will be added dynamically here -->
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Edit User Modal -->
+<div class="modal" id="editUserModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Form fields for editing user details -->
+          <form id="editUserForm">
+            <div class="form-group">
+              <label for="userEmail">Email</label>
+              <input type="email" class="form-control" id="userEmail" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="userFirstName">First Name</label>
+              <input type="text" class="form-control" id="userFirstName" placeholder="Enter first name">
+            </div>
+            <div class="form-group">
+              <label for="userLastName">Last Name</label>
+              <input type="text" class="form-control" id="userLastName" placeholder="Enter last name">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="saveChangesBtn">Save Changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Create User Modal -->
+<div class="modal" id="createUserModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Create User</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <!-- Form fields for creating new user -->
+              <form id="createUserForm">
+                  <div class="form-group">
+                      <label for="newUserEmail">Email</label>
+                      <input type="email" class="form-control" id="newUserEmail" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                      <label for="newUserFirstName">First Name</label>
+                      <input type="text" class="form-control" id="newUserFirstName" placeholder="Enter first name">
+                  </div>
+                  <div class="form-group">
+                      <label for="newUserLastName">Last Name</label>
+                      <input type="text" class="form-control" id="newUserLastName" placeholder="Enter last name">
+                  </div>
+              </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="createUserSaveBtn">Save Changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="t1.js"></script>
+</body>
+</html>
